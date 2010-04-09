@@ -353,6 +353,11 @@ module Geokit
     # precision. see http://code.google.com/apis/maps/documentation/geocoding/#GeocodingAccuracy
     attr_accessor :accuracy
 
+    alias zip_code zip
+    alias zip_code= zip=
+    alias postal_code zip
+    alias postal_code= zip=
+
     # Constructor expects a hash of symbols to correspond with attributes.
     def initialize(h={})
       @all = [self]

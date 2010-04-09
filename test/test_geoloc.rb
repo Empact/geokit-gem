@@ -35,7 +35,22 @@ class GeoLocTest < Test::Unit::TestCase #:nodoc: all
     @loc.city = "san francisco"
     assert_equal 'San Francisco', @loc.city
   end
-  
+
+  def test_zip
+    @loc.zip = "11211"
+    assert_equal '11211', @loc.zip
+    assert_equal '11211', @loc.zip_code
+    assert_equal '11211', @loc.postal_code
+    @loc.zip_code = "98101"
+    assert_equal '98101', @loc.zip
+    assert_equal '98101', @loc.zip_code
+    assert_equal '98101', @loc.postal_code
+    @loc.zip_code = "78701"
+    assert_equal '78701', @loc.zip
+    assert_equal '78701', @loc.zip_code
+    assert_equal '78701', @loc.postal_code
+  end
+
   def test_full_address
     @loc.city = 'San Francisco'
     @loc.state = 'CA'
